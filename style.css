@@ -1,0 +1,198 @@
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@200&display=swap');
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: 'Poppins', sans-serif;
+}
+body{
+    background-image:linear-gradient(rgba(0,0,0,0.5), rgba(0,0,0,0.7)), url('3d-wall-fractal-4k-wf.jpg');
+    background-size:100%;
+    background-repeat: no-repeat;
+    height : 100%;
+    background-position: center;
+    background-size: cover;
+    background-attachment: fixed;
+}
+.play_board, .select_box, .result_box{
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    transition: all 0.3s ease;
+}
+
+.select_box{
+    background: #ffff;
+    padding: 20px 25px 25px ;
+    border-radius: 5px;
+    max-width: 330px;
+    width: 100%;
+    /* display: none; */
+}
+.select_box.hide{
+    opacity: 0;
+    pointer-events: none;
+    transform: translate(-50% , -50%) scale(0.9); 
+}
+.play_board{
+    opacity: 0;
+    pointer-events: none;
+    transform: translate(-50% , -50%) scale(0.9); 
+}
+.play_board.show{
+    opacity: 1;
+    pointer-events: auto;
+    transform: translate(-50% , -50%) scale(1); 
+}
+.select_box header{
+    font-size: 23px;
+    font-weight:600;
+    padding-bottom: 15px;
+    border-bottom : 1px solid #ccc;
+}
+.select_box .title{
+    font-size: 18px;
+    font-weight: 500;
+    margin: 20px 0;
+}
+.select_box .options{
+    display: flex;
+    width:100%;
+}
+.options button{
+    width: 100%;
+    font-size: 18px;
+    font-weight: 500;
+    padding: 8px 20px;
+    border: none;
+    outline: none;
+    background: orangered;
+    border-radius: 5px;
+    cursor : pointer;
+    color: white;
+    transition: all 0.3s ease;
+}
+.options button:hover,
+.result_box .btn button:hover{
+    transform: scale(0.96);
+}
+.options button.playerX{
+    margin-right: 5px;
+}
+.options button.playerO{
+    margin-left: 5px;
+}
+.play_board .details{
+    background: #fff;
+    padding: 7px;
+    border-radius: 5px;
+}
+.play_board section{
+    display: flex;
+}
+.play_board .play_area{
+    margin-top: 20px;
+}
+.play_board section span{
+    display: block;
+    margin: 2px;
+    height: 80px;
+    width: 80px;
+    background: #fff ;
+    border-radius: 5px;
+    font-size: 40px;
+    text-align: center;
+    line-height: 80px;
+    color: orangered;
+}
+.play_board .details .players{
+    display: flex;
+    width: 100%;
+    position: relative;
+    justify-content: space-between;
+}
+.play_board .details span{
+    width: 100%;
+    border-radius: 5px;
+    padding: 7px 0;
+    font-size: 19px;
+    color: orangered;
+    font-weight: 500;
+    cursor: default;
+    text-align: center;
+    position: relative;
+    z-index: 5;
+    transition: all 0.3s ease;
+}
+.players.active span:first-child{
+    color: orangered;
+}
+.players.active span:nth-child(2){
+    color: #fff;
+}
+.players.active .slider{
+    left: 50%;
+}
+
+.details span:first-child{
+    color: #fff;
+}
+
+.details .slider{
+    position: absolute;
+    top: 0;
+    left: 0;
+    height: 100%;
+    width: 50%;
+    background: orangered;
+    border-radius: 5px;   
+    z-index: 2;
+    transition : all 0.3s ease;
+}
+.result_box{
+    background: #fff;
+    padding: 20px;
+    border-radius: 5px;
+    max-width: 350px;
+    width: 100%;
+    /*display: none;*/
+    opacity: 0;
+    pointer-events: none;
+    transform: translate(-50% , -50%) scale(0.9); 
+}
+.result_box.show{
+    opacity: 1;
+    pointer-events: auto;
+    transform: translate(-50% , -50%) scale(1); 
+}
+
+
+.result_box .won_text{
+    font-size: 25px;
+    font-weight: 500;
+    display:flex;
+    justify-content: center;
+}
+.result_box  .won_text p{
+    font-weight: 700;
+    margin: 0 5px;
+    display: flex;
+}
+.result_box .btn{
+    display: flex;
+    margin-top: 20px;
+    justify-content: center;
+}
+.result_box .btn button{
+    font-size: 18px;
+    font-weight: 500;
+    padding: 8px 20px;
+    border: none;
+    outline: none;
+    background: orangered;
+    border-radius: 5px;
+    cursor : pointer;
+    color: white;
+    transition: all 0.3s ease;
+}
